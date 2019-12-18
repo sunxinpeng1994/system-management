@@ -1,0 +1,23 @@
+project name:
+	management system
+	
+what to do:
+	login, check data in db
+	sign out, destroy session
+	register, insert data into db
+
+database design:
+	user table: t_user
+		user id: uid 
+		user name: uname
+		password: pwd
+		gender: gender
+		age: age
+		DOB: dob
+
+SQL:
+ 	login:
+ 		select * from t_user where uname=? and pwd=?
+ 	register:
+ 		insert into t_user values(default, ?, ?, ?, ?)
+
