@@ -24,7 +24,7 @@
   </div>
   <div class="head-l">
 	<span style="color:white; font-size:1.2em;">Welcome <%=session.getAttribute("userName")%></span> &nbsp;&nbsp;
-  	<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> 
+  	<a class="button button-little bg-red" href="out"><span class="icon-power-off"></span> 退出登录</a> 
   </div>
 </div>
 <div class="leftnav">
