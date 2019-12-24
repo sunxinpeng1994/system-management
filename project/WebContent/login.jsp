@@ -26,15 +26,22 @@
             <div style="height:150px;"></div>
             <div class="media media-y margin-big-bottom">           
             </div>         
-            <form action="user" method="post">
+            <form action="data" method="post">
+            <input type="hidden" name="method" value="userLogin">
             <div class="panel loginbox">
                 <div class="text-center margin-big padding-big-top"><h1>管理中心</h1></div>
                 <%
                 	Object obj = session.getAttribute("flag");
                 	if(obj != null) {
-                		%>
-                		<div class="text-center " style="color:red;">用户名或密码错误</div>
-                		<% 
+                		if(((String)obj).equals("loginFalse")) {
+                			%>
+                    		<div class="text-center " style="color:red;">用户名或密码错误</div>
+                    		<% 
+                		} else if(((String)obj).equals("regSuccess")){
+                			%>
+                    		<div class="text-center " style="color:red;">注册成功</div>
+                    		<%
+                		}
                 		session.invalidate();
                 	}
                 	
@@ -62,6 +69,7 @@
                     </div>
                 </div>
                 <div style="padding:30px;"><input type="submit" class="button button-block bg-main text-big input-big" value="登录"></div>
+            	<div style="padding:30px;padding-top:0px;"><a href="registration.jsp"><input type="button" class="button button-block bg-main text-big input-big" value="注册"></a></div>
             </div>
             </form>          
         </div>

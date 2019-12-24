@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
 encoding//WebContent/css/admin.css=UTF-8
+encoding//src/com/xp/servlet/BaseServelet.java=UTF-8
+encoding//src/com/xp/servlet/DataServlet.java=UTF-8

@@ -16,6 +16,15 @@
     <link rel="stylesheet" href="css/pintuer.css">
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>   
+    <script>
+	    $(function(){
+	    	$("#out").click(function(){
+	    		return window.confirm("你真的要退出吗?");
+	    	})
+	    	
+	    })
+    	
+    </script>
 </head>
 <body style="background-color:#f2f9fd;">
 <div class="header bg-main">
@@ -24,7 +33,7 @@
   </div>
   <div class="head-l">
 	<span style="color:white; font-size:1.2em;">Welcome <%=session.getAttribute("userName")%></span> &nbsp;&nbsp;
-  	<a class="button button-little bg-red" href="out"><span class="icon-power-off"></span> 退出登录</a> 
+  	<a id="out" class="button button-little bg-red" href="data?method=userOut"><span class="icon-power-off"></span> 退出登录</a> 
   </div>
 </div>
 <div class="leftnav">

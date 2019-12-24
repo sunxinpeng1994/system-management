@@ -47,4 +47,12 @@ public class UserDaoImpl implements UserDao {
 		return u;
 	}
 
+	@Override
+	public Integer regUserInfoDao(String uname, String pwd, String gender,
+			int age, String dob) {
+		String sql = "insert into t_user values(default,?,?,?,?,?)";
+		return DBUtil.executeDML(sql, uname, pwd, gender, age, dob);
+		
+	}
+
 }

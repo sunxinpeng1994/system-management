@@ -13,5 +13,11 @@ public class UserServiceImpl implements UserService {
 		
 		
 	}
+	@Override
+	public Integer regUserInfoService(String uname, String pwd, String gender,
+			int age, String dob) {
+		return ud.regUserInfoDao(uname, pwd, gender, age, dob);
+		
+	}
 
 }
