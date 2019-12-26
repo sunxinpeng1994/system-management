@@ -1,5 +1,7 @@
 package com.xp.dao;
 
+import java.util.List;
+
 import com.xp.pojo.User;
 
 public interface UserDao {
@@ -8,5 +10,9 @@ public interface UserDao {
 
 	Integer regUserInfoDao(String uname, String pwd, String gender, int age,
 			String dob);
+
+	List<User> selUserInfoDao();
+
+	
 
 }

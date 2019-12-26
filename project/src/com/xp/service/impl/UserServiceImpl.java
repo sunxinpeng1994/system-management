@@ -1,4 +1,6 @@
 package com.xp.service.impl;
+import java.util.List;
+
 import com.xp.dao.UserDao;
 import com.xp.dao.impl.UserDaoImpl;
 import com.xp.pojo.User;
@@ -18,6 +20,11 @@ public class UserServiceImpl implements UserService {
 			int age, String dob) {
 		return ud.regUserInfoDao(uname, pwd, gender, age, dob);
 		
+	}
+	@Override
+	public List<User> selUserInfoService() {
+		// TODO Auto-generated method stub
+		return ud.selUserInfoDao();
 	}
 
 }

@@ -2,6 +2,7 @@ package com.xp.servlet;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,6 +52,7 @@ public class DataServlet extends BaseServelet {
 //			e.printStackTrace();
 //		}	
 //	}
+    
 	//login
 	public void userLogin(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		//get request
@@ -100,6 +102,22 @@ public class DataServlet extends BaseServelet {
 			resp.sendRedirect("/project/registration.jsp");
 		}
 	}
+	//查询用户信息
+		public void selUserInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+			//获取请求信息
+			//处理请求信息
+				//创建业务层对象
+				UserService us=new UserServiceImpl();
+				//调用业务层方法处理请求
+				List<User> lu=us.selUserInfoService();
+				System.out.println("lu " + lu);
+			//响应处理结果
+				//将结果存储到request作用域中
+				req.setAttribute("lu",lu);
+				//请求转发
+				req.getRequestDispatcher("/user/userList2.jsp").forward(req, resp);
+				return;
+		}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
