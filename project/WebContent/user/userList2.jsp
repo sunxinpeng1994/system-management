@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*,com.xp.pojo.*" pageEncoding="utf-8"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -32,27 +32,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <th width="10%">出生日期</th>
       <th width="10%">操作</th>
     </tr>
-    	<%
-   		//获取作用域中的用户数据
-   		ArrayList<User> lu=(ArrayList<User>)request.getAttribute("lu");
-    	//遍历
-    	for(int i=0;i<lu.size();i++){
-	    %>
-	     <tr>
-	      <td width="5%"><%=lu.get(i).getUid() %></td>
-	      <td width="15%"><%=lu.get(i).getUname() %></td>
-	      <td width="10%"><%=lu.get(i).getPwd() %></td>
-	      <td width="10%"><%=lu.get(i).getGender() %></td>
-	      <td width="10%"><%=lu.get(i).getAge()%></td>
-	      <td width="10%"><%=lu.get(i).getDob()%></td>
-	     <td>
-	     	<div class="button-group"> 
-	     		<a class="button border-main" href="cateedit.html" style="padding:3px;margin:2px"><span class="icon-edit"></span> 修改</a> 
-	     		<a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"style="padding:3px;margin:2px"><span class="icon-trash-o"></span> 删除</a> 
-	     	</div>
-	     </td>
-    	</tr>
-	  <%}%>
+    	
+	  <c:forEach items="${lu}" var="u">
+	    	<tr>
+		      <td width="5%">${u.uid}</td>
+		      <td width="15%">${u.uname}</td>
+		      <td width="10%">${u.pwd}</td>
+		      <td width="10%">${u.gender}</td>
+		      <td width="10%">${u.age}</td>
+		      <td width="10%">${u.dob}</td>
+		     <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="data?method=delUserInfo&uid=${u.uid}" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+	    	</tr>
+    	</c:forEach>
   </table>
 </div>
 <script type="text/javascript">
