@@ -26,5 +26,10 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return ud.selUserInfoDao();
 	}
+	@Override
+	public int delUserInfoService(String uid) {
+		// TODO Auto-generated method stub
+		return ud.delUserInfoDao(uid);
+	}
 
 }

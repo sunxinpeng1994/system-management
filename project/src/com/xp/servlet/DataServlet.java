@@ -87,7 +87,7 @@ public class DataServlet extends BaseServelet {
 		//retrieve req
 		String uname = req.getParameter("uname");
 		String pwd = req.getParameter("pwd");
-		String gender = req.getParameter("sex");
+		String gender = req.getParameter("gender");
 		int age = Integer.parseInt(req.getParameter("age"));
 		String dob = req.getParameter("dob");
 		UserService us = new UserServiceImpl();
@@ -118,6 +118,24 @@ public class DataServlet extends BaseServelet {
 				req.getRequestDispatcher("/user/userList2.jsp").forward(req, resp);
 				return;
 		}
+		public void delUserInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+			String uid = req.getParameter("uid");
+			UserService us=new UserServiceImpl();
+			
+			int i = us.delUserInfoService(uid);
+			if(i > 0) {
+				resp.getWriter().write("delete finish");
+			} else {
+				resp.getWriter().write("delete fail");
+			}
+
+		
+		
+			
+			return;
+		}
+		
+		
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
