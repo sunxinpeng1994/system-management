@@ -104,15 +104,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public int delUserInfoDao(String uid) {
-<<<<<<< HEAD
-		// TODO Auto-generated method stub
-		String sql = "delete from t_user where uid=?";
-		return DBUtil.executeDML(sql, uid);
-=======
+
 		String sql = "delete from t_user where uid=?";
 		return DBUtil.executeDML(sql, uid);
 		
->>>>>>> 53c2f983cd4deee23335ca65d9375d8ca223778d
+
 	}
 
 }

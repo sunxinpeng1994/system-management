@@ -12,11 +12,7 @@ public interface UserService {
 
 	List<User> selUserInfoService();
 
-<<<<<<< HEAD
-=======
-	
 
->>>>>>> 53c2f983cd4deee23335ca65d9375d8ca223778d
 	int delUserInfoService(String uid);
 
 }

@@ -56,6 +56,7 @@ function del(uid){
 	if(confirm("您确定要删除吗?")){
 		$.get("data",{method:"delUserInfo",uid:uid},function(data){
 			alert(data);
+			window.location.href="data?method=selUserInfo";
 		});
 	}		
 		
