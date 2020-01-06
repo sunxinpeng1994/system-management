@@ -41,7 +41,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      <td width="10%">${u.gender}</td>
 		      <td width="10%">${u.age}</td>
 		      <td width="10%">${u.dob}</td>
+<<<<<<< HEAD
 		     <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="data?method=delUserInfo&uid=${u.uid}" onclick="return del()"><span class="icon-trash-o"></span> 删除</a> </div></td>
+=======
+		     <td><div class="button-group">
+		      <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> 
+		      <a class="button border-red" href="data?method=delUserInfo&uid=${u.uid}" onclick="return del(1,2)">
+		      <span class="icon-trash-o"></span> 删除</a> </div></td>
+>>>>>>> 53c2f983cd4deee23335ca65d9375d8ca223778d
 	    	</tr>
     	</c:forEach>
   </table>

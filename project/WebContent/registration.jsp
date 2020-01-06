@@ -87,12 +87,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			          
 			          <label class="button active">
 			         	  <span class="icon-check" id="manSpan"></span>             
-			              <input name="sex" value="male" id="man" type="radio" checked="checked">男         
+			              <input name="gender" value="M" id="man" type="radio" checked="checked">男         
 			          </label>             
 			        
 			          <label class="button active" >
 			          	  <span class="" id="womanSpan"></span>          	
-			              <input name="sex" value="female" id="woman" type="radio">女
+			              <input name="gender" value="F" id="woman" type="radio">女
 			          </label>         
 			           </div>       
 			        </div>
