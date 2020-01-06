@@ -13,6 +13,8 @@ public interface UserDao {
 
 	List<User> selUserInfoDao();
 
+	int delUserInfoDao(String uid);
+
 	
 
 }

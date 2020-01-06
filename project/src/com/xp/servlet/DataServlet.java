@@ -118,6 +118,16 @@ public class DataServlet extends BaseServelet {
 				req.getRequestDispatcher("/user/userList2.jsp").forward(req, resp);
 				return;
 		}
+	public void delUserInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String uid = req.getParameter("uid");
+		UserService us=new UserServiceImpl();
+		int i = us.delUserInfoService(uid);
+		if(i > 0) {
+			resp.getWriter().write("User delete sucess");
+		} else {
+			resp.getWriter().write("User delete fail");
+		}
+	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

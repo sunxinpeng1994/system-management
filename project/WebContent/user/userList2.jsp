@@ -41,16 +41,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      <td width="10%">${u.gender}</td>
 		      <td width="10%">${u.age}</td>
 		      <td width="10%">${u.dob}</td>
-		     <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="data?method=delUserInfo&uid=${u.uid}" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
+		     <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="data?method=delUserInfo&uid=${u.uid}" onclick="return del()"><span class="icon-trash-o"></span> 删除</a> </div></td>
 	    	</tr>
     	</c:forEach>
   </table>
 </div>
 <script type="text/javascript">
-function del(id,mid){
-	if(confirm("您确定要删除吗?")){			
+function del(){
+	return confirm("您确定要删除吗?")		
 		
-	}
+	
 }
 </script>
 </body>

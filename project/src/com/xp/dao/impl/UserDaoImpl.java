@@ -102,4 +102,11 @@ public class UserDaoImpl implements UserDao {
 		return lu;
 	}
 
+	@Override
+	public int delUserInfoDao(String uid) {
+		// TODO Auto-generated method stub
+		String sql = "delete from t_user where uid=?";
+		return DBUtil.executeDML(sql, uid);
+	}
+
 }
